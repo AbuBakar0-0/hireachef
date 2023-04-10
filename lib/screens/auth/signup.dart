@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hireachef/Constants.dart';
-import 'package:hireachef/screens/auth/signup.dart';
+import 'package:hireachef/screens/auth/login.dart';
 import 'package:hireachef/screens/customer/home.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+import '../../widgets/textfields/text_field.dart';
+
+class Signup extends StatefulWidget {
+  const Signup({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   TextEditingController username = TextEditingController();
   TextEditingController password = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController city = TextEditingController();
 
+  int radioValue = 1;
+  handleRadioValueChange(int value) {
+    setState(() {
+      radioValue = value;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +36,7 @@ class _LoginState extends State<Login> {
           child: Container(
             padding: EdgeInsets.symmetric(horizontal: 25),
             width: Get.width - 20,
-            height: 500,
+            height: 650,
             decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(
@@ -43,30 +53,51 @@ class _LoginState extends State<Login> {
                 const SizedBox(
                   height: 20,
                 ),
-                TextFormField(
-                  controller: username,
-                  //Set decoration
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Username",
-                    prefixIcon: Icon(Icons.supervised_user_circle_outlined),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  obscureText: true,
-                  controller: password,
-                  //Set decoration
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Password",
-                    prefixIcon: Icon(Icons.password),
-                  ),
-                ),
-                const SizedBox(
-                  height: 20,
+                textfield(username, "Username", Icons.person),
+                textfield(email, "Email", Icons.email_outlined),
+                textfield(password, "Password", Icons.password),
+                textfield(username, "Location", Icons.location_city_outlined),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                     Radio(
+                        value: 1,
+                        groupValue: radioValue,
+                        onChanged: (value){
+                          handleRadioValueChange(1);
+                        }
+                    ),
+                    const Text(
+                      'Customer',
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                    Radio(
+                        value: 2,
+                        groupValue: radioValue,
+                        onChanged: (value){
+                          handleRadioValueChange(2);
+                        }
+                    ),
+                    const Text(
+                      'Chef',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                    Radio(
+                        value: 3,
+                        groupValue: radioValue,
+                        onChanged: (value){
+                          handleRadioValueChange(3);
+                        }
+                    ),
+                    const Text(
+                      'Caterer',
+                      style: TextStyle(
+                        fontSize: 16.0,
+                      ),
+                    ),
+                  ],
                 ),
                 GestureDetector(
                   onTap: (){
@@ -83,7 +114,7 @@ class _LoginState extends State<Login> {
                     ),
                     alignment: Alignment.center,
                     child: const Text(
-                      "Login",
+                      "Signup",
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -97,16 +128,15 @@ class _LoginState extends State<Login> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Get.offAll(const Signup());
+                    Get.to(()=>const Login());
                   },
                   child: RichText(
                     text: const TextSpan(
                       style: TextStyle(color: Colors.black),
-                      //apply style to all
                       children: [
-                        TextSpan(text: "Don't have an account? "),
+                        TextSpan(text: "Already have an account? "),
                         TextSpan(
-                          text: 'Signup!',
+                          text: 'Login!',
                           style: TextStyle(
                             decoration: TextDecoration.underline,
                           ),

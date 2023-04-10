@@ -90,7 +90,6 @@ class _HomeState extends State<Home> {
                     topNavCard("Caterers"),
                     topNavCard("Cuisines"),
                     topNavCard("Top Picks"),
-                    topNavCard("Favourites"),
                   ],
                 ),
               ),
