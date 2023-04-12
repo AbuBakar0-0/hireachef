@@ -43,6 +43,8 @@ class _ItemDetailState extends State<ItemDetail> {
               borderRadius: BorderRadius.circular(20.0),
               child: const Image(
                 image: AssetImage('assets/burger.jpg'),
+                height: 130,
+                width:130,
               ),
             ),
             const SizedBox(

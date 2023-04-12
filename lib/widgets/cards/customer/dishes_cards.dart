@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hireachef/screens/customer/item_detail.dart';
 
-import '../../Constants.dart';
+import '../../../Constants.dart';
 
 dishesCard(image, name, description, rating, price) {
   return GestureDetector(
@@ -36,6 +36,7 @@ dishesCard(image, name, description, rating, price) {
                 child: Image(
                   image: AssetImage(image),
                   width: 130,
+                  height: 130,
                 ),
               ),
             ),

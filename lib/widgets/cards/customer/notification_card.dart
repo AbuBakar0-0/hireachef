@@ -14,6 +14,7 @@ notificationCard(name,message,time,image){
               child: Image(
                 image: AssetImage(image),
                 width: 50,
+                height:50,
               ),
             ),
             const SizedBox(width: 10,),
@@ -21,6 +22,9 @@ notificationCard(name,message,time,image){
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(name+" "+message),
+                const SizedBox(
+                  height: 5,
+                ),
                 Text(time),
               ],
             ),

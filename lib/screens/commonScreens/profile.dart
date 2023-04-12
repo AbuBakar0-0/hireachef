@@ -3,18 +3,34 @@ import 'package:get/get.dart';
 import 'package:hireachef/screens/auth/login.dart';
 import 'package:hireachef/screens/customer/password_edit.dart';
 import 'package:hireachef/widgets/navigation/bottom_navigation.dart';
-import 'package:hireachef/widgets/cards/profile_cards.dart';
+import 'package:hireachef/widgets/navigation/catering_navigation.dart';
 
 import '../../Constants.dart';
+import '../../widgets/cards/customer/profile_cards.dart';
+import '../../widgets/navigation/chef_navigation.dart';
 
 class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+  Profile({Key? key}) : super(key: key);
 
+  var id;
+  Profile.set({this.id});
   @override
   State<Profile> createState() => _ProfileState();
 }
 
 class _ProfileState extends State<Profile> {
+
+  bottomNavigation(){
+    if(widget.id==1){
+      return navigationBar(context, 3);
+    }else if (widget.id==2){
+      return chefNavigation(context, 3);
+    }else if (widget.id==3){
+      return cateringNavigation(context, 3);
+    }else if (widget.id==4){
+
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +77,7 @@ class _ProfileState extends State<Profile> {
               child: const Image(
                 image: AssetImage("assets/avatar-2.jpg"),
                 width: 130,
+                height: 130,
               ),
             ),
             const SizedBox(
@@ -118,7 +135,7 @@ class _ProfileState extends State<Profile> {
           ],
         ),
       ),
-      bottomNavigationBar: navigationBar(context, 3),
+      bottomNavigationBar: bottomNavigation(),
     );
   }
 }

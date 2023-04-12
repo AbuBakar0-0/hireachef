@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hireachef/Constants.dart';
 import 'package:hireachef/screens/auth/signup.dart';
+import 'package:hireachef/screens/catering/catering_home.dart';
+import 'package:hireachef/screens/chef/chef_home.dart';
 import 'package:hireachef/screens/customer/home.dart';
 
 class Login extends StatefulWidget {
@@ -24,7 +26,7 @@ class _LoginState extends State<Login> {
         color: Constant.orange,
         child: Center(
           child: Container(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             width: Get.width - 20,
             height: 500,
             decoration: const BoxDecoration(

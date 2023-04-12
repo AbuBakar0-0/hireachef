@@ -1,18 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hireachef/widgets/navigation/bottom_navigation.dart';
+import 'package:hireachef/widgets/navigation/catering_navigation.dart';
+import 'package:hireachef/widgets/navigation/chef_navigation.dart';
 
-import '../../Constants.dart';
-import '../../widgets/cards/conversation_card.dart';
+import '../../../Constants.dart';
+import '../../../widgets/cards/customer/conversation_card.dart';
 
 class ChatMain extends StatefulWidget {
-  const ChatMain({Key? key}) : super(key: key);
-
+  ChatMain({Key? key}) : super(key: key);
+  var id;
+  ChatMain.set({this.id});
   @override
   State<ChatMain> createState() => _ChatMainState();
 }
 
 class _ChatMainState extends State<ChatMain> {
+
+
+  bottomNavigation(){
+    if(widget.id==1){
+      return navigationBar(context, 1);
+    }else if (widget.id==2){
+      return chefNavigation(context, 1);
+    }else if (widget.id==3){
+      return cateringNavigation(context, 1);
+    }else if (widget.id==4){
+
+    }
+  }
 
 
   @override
@@ -85,7 +101,7 @@ class _ChatMainState extends State<ChatMain> {
           ),
         ),
       ),
-      bottomNavigationBar: navigationBar(context, 1),
+      bottomNavigationBar: bottomNavigation()
     );
   }
 }

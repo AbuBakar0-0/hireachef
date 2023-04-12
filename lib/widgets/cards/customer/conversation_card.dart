@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hireachef/screens/customer/chat_detail.dart';
+import 'package:hireachef/screens/commonScreens/chat/chat_detail.dart';
 
 convoCard(name, messageText,imageUrl, time) {
   return GestureDetector(

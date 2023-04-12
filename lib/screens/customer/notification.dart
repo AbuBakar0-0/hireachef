@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:hireachef/widgets/navigation/bottom_navigation.dart';
 
 import '../../Constants.dart';
-import '../../widgets/cards/notification_card.dart';
+import '../../widgets/cards/customer/notification_card.dart';
 
 class Notifications extends StatefulWidget {
   const Notifications({Key? key}) : super(key: key);

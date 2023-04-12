@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hireachef/widgets/cards/dishes_cards.dart';
+import 'package:hireachef/widgets/cards/customer/dishes_cards.dart';
 
 import '../../Constants.dart';
 
@@ -46,6 +46,7 @@ class _ChefDetailState extends State<ChefDetail> {
                 child: const Image(
                   image: AssetImage("assets/avatar-2.jpg"),
                   width: 130,
+                  height: 130,
                 ),
               ),
               const SizedBox(

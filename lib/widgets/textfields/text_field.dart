@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-textfield(controller,name,icon){
+textField(controller,name,icon){
   return Container(
     margin:const EdgeInsets.symmetric(vertical: 5),
     child: TextFormField(

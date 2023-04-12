@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hireachef/Constants.dart';
-import 'package:hireachef/widgets/cards/chef_cards.dart';
+import 'package:hireachef/widgets/cards/customer/chef_cards.dart';
 import 'package:hireachef/widgets/navigation/bottom_navigation.dart';
 import 'package:hireachef/widgets/navigation/top_nav_card.dart';
 

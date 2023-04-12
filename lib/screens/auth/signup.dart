@@ -53,10 +53,10 @@ class _SignupState extends State<Signup> {
                 const SizedBox(
                   height: 20,
                 ),
-                textfield(username, "Username", Icons.person),
-                textfield(email, "Email", Icons.email_outlined),
-                textfield(password, "Password", Icons.password),
-                textfield(username, "Location", Icons.location_city_outlined),
+                textField(username, "Username", Icons.person),
+                textField(email, "Email", Icons.email_outlined),
+                textField(password, "Password", Icons.password),
+                textField(username, "Location", Icons.location_city_outlined),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -9,6 +9,7 @@ topNavCard(title){
     },
     child: Container(
       width: 100,
+      height: 40,
       alignment: Alignment.center,
       margin: const EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
