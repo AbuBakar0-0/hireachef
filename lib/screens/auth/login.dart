@@ -72,7 +72,7 @@ class _LoginState extends State<Login> {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Get.offAll(()=>const Home());
+                    Get.offAll(()=>const CateringHome());
                   },
                   child: Container(
                     width: Get.width,
